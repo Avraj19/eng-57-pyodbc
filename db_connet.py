@@ -9,7 +9,7 @@ password = 'Passw0rd2018'
 con = pyodbc.connect(
     'DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + user + ';PWD=' + password)
 
-# print('Testing connection\n' + str(con))
+print('Testing connection\n' + str(con))
 
 # Make a courser:
 
@@ -36,9 +36,11 @@ query_redult = cursor.execute('SELECT * FROM Products')
 data_point_card = query_redult.fetchone()
 
 # # This one entry of data ia a pyodbc.row object
-print(type(data_point_card))
+# print(type(data_point_card))
+
 # # Behaves like an iterable list - organised with index
-print(data_point_card[1])
+# print(data_point_card[1])
+
 # # Also behave like a oop object, where the initialized parameters are the column name
 # print(data_point_card.ProductName)
 
@@ -52,8 +54,8 @@ list_all_rows = query_redult.fetchall()
 
 # # This will get all the rows
 
-sql = 'SELECT * FROM Products'
-number_of_rows = cursor.execute(sql)
+# sql = 'SELECT * FROM Products'
+# number_of_rows = cursor.execute(sql)
 
 # while True:
 #     row = cursor.fetchone()
