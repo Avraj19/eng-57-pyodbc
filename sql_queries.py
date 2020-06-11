@@ -42,20 +42,16 @@ cursor = con.cursor()
 
 
 ### Q3 - Select all orders that the Ship City is Rio de Janeiro or Reims?
-q3 = cursor.execute('SELECT OrderID'
-                    'FROM Orders'
-                    'WHERE ShipCity LIKE \'%Rio%\' OR ShipCity LIKE \'%Reims%\'')
+# q3 = cursor.execute('SELECT OrderID FROM Orders WHERE ShipCity LIKE \'%Rio%\' OR ShipCity LIKE \'%Reims%\'')
 
-# "SELECT COUNT(OrderID)"
-#                     "FROM Orders"
-#                     "WHERE ShipCity LIKE '%Rio%' OR ShipCity LIKE '%Reims%'"
-print_row()
+#
+
 ### Q4 - Select all of the entries where the Company name has a z or a Z in the table of Customers
-
+# q4 = cursor.execute("SELECT CompanyName FROM Customers WHERE CompanyName LIKE '%Z%'")
 
 ### Q5 - We need to update all of our FAX information! This Day and age it is a must! :sweat_smile::sweat_smile::sweat_smile: Find me the Name of All of the companies that we do not have their FAX numbers! I would also like to know with whom I need to speak with, their contact numbers and what city they are base in.
-
-
+q5 = cursor.execute("SELECT CompanyName,Fax FROM Customers WHERE Fax IS NULL")
+print_row()
 ### Q6 - Ahh there you are! My prize :star::star:SPARTANTS:star::star:! MY MARES AND MY STALLIONS! We need to re-target all of our Customers is Paris! Get me information on these clients.
 
 
